@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hotstar</title>
+    <style>
+     
+     body{
+      background-color: rgb(4, 4, 27);
+     }
+
+      #maincontainer{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 10px;
+        position: relative;
+      }
+
+      .container{
+       position: relative;
+      }
+
+      .tile{
+        position: absolute;
+        top: 199px;
+        background-color: rgba(0,0,0,.75);
+        color:aliceblue;
+        opacity: 0;
+        margin: 2px;
+        border-radius: 10px;
+}     
+      .container:hover .tile{
+        opacity: 1;
+        transition-delay: 0.3s;
+      }  
+      
+      .container:hover .img1{
+        width: 250px;
+        height: 350px;
+        opacity: 0.8;
+        transition-delay: 0.3s;
+        transform: scale(1.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: 0.3;
+      }  
+
+      .srname{
+        color: aliceblue;
+      }
+      .img1{
+        border-radius: 8px;
+        width: 200px;
+        height: 300px;;
+
+      }
+      .header{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        position: sticky;
+        background-color: rgb(4, 4, 27);
+      }
+      .line{
+        width: 18px;
+        height: 2px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        background: aliceblue;
+        display: block;
+      }
+      .wrapper{
+        position: relative;
+        padding: 20px;
+        margin-left: -10px;
+        box-sizing: border-box;
+      }
+      .logo{
+        position: relative;
+        top: 6px;
+        left: 8px;
+        
+      }
+      .srchicon{
+        height: 20px;
+        width: 20px;
+      }
+      input{
+        position: relative;
+         width: 240px;
+         height: 32px;
+        border: none;
+       border-bottom: 1px solid aliceblue;
+       color: aliceblue;
+       font-size: 16px;
+       outline: 0;
+       padding: 0 28px 0 0px;
+       border-radius: 0;
+       background: none;
+      }
+      .search{
+        position: relative;
+        top: 9px;
+        left: 170px;
+
+      }
+      .subbut{
+       position: relative;
+       outline: none;
+       color: #fff;
+       text-align: center;
+       top: 5px;
+       left: 200px;
+       text-transform: uppercase;
+        background: rgb(38, 38, 177);
+        border: none;
+       font-size: 12px;
+       margin: 15px 0 15px 20px;
+       padding: 0 12px;
+       letter-spacing: 0.4px;
+       font-weight: 700;
+       height: 24px;
+       line-height: 24px;
+       border-radius: 4px;
+      }
+      .login{
+        position:absolute;
+        right: -250px;
+        top: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: aliceblue;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+        padding: 13px 0;
+        margin-left: 15px;
+        opacity: 1;
+        font-size: 14px;
+      }
+      .headert{
+        position: fixed;
+        top: 0px;
+        z-index: 50;
+        background-color: rgb(4, 4, 27); ;
+        
+      }
+    </style>
+</head>
+<body>
+  <div class="headert">
+    <div class="header">
+      <div class="wrapper">
+         <span class="line"></span>
+         <span class="line"></span>
+         <span class="line"></span>
+      </div>
+      <div class="logo">
+        <img class="logoimg" src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg
+        " alt="disney hotstar">
+      </div>
+      <div class="search">
+        <input class type="search" placeholder="Search">
+        <img class="srchicon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png">
+      </div>
+      <button type="button" class="subbut">Subscribe</button>
+      <div class="login">LOGIN</div>
+    </div>
+  </div>  
+    <h1 style="color: aliceblue;">Latest & Trending</h1>
+    <div id="maincontainer"></div>
+</body>
+</html>
+<script>
+   const maincontainer = document.getElementById("maincontainer");
+
+   const json = [
+    {
+        sname: "Vikarnat Rona",
+        detail: "2hr 25 min, Action, thriller, Hindi, 2020 ",
+        desc: "when series of mysterious event stir",
+        imgurl: "https://upload.wikimedia.org/wikipedia/en/5/51/Vikrant_Rona.jpeg"
+    },
+
+    {
+        sname: "Dahan",
+        detail: "2hr 25 min, Action, thriller, Hindi, 2020 ",
+        desc: "when series of mysterious event stir",
+        imgurl: "https://assets.gadgets360cdn.com/pricee/assets/product/202209/Dahan-poster_1662031661.jpg"
+    },
+    {
+        sname: "Thor: Love and Thunder",
+        detail: "2hr 25 min, Action, thriller, Hindi, 2020 ",
+        desc: "when series of mysterious event stir",
+        imgurl: "https://www.thefilmik.com/wp-content/uploads/2022/04/Thor-Love-and-Thunder.webp"
+    },
+    {
+        sname: "Criminal Justice: Ek adhura sach",
+        detail: "2hr 25 min, Action, thriller, Hindi, 2020 ",
+        desc: "when series of mysterious event stir",
+        imgurl: "https://m.media-amazon.com/images/M/MV5BZmVjMDAzZjMtNGNiNS00NzY3LTk2YjUtYjg0ZWVhYzU3N2ZlXkEyXkFqcGdeQXVyMTE3MzIyMDM5._V1_.jpg"
+    },
+    {
+        sname: "Super 30",
+        detail: "2hr 25 min, Action, thriller, Hindi, 2020 ",
+        desc: "when series of mysterious event stir",
+        imgurl: "https://upload.wikimedia.org/wikipedia/en/2/29/Super_30_The_Film.jpg"
+    }
+   ];
+
+   for (let i = 0; i <= json.length; i++ ){
+
+   const Container = document.createElement("div");
+   Container.className = "container"; 
+
+   const tile = document.createElement("div");
+   tile.className = "tile"  ;
+   
+   const img1 = document.createElement("img");
+   img1.src = json[i].imgurl;
+   img1.className = "img1"  ;
+   
+   const srname = document.createElement("div");
+   srname.className = "srname";
+   srname.innerText = json[i].sname;
+
+   const dretail = document.createElement("div");
+   dretail.className = "dretail";
+   dretail.innerText = json[i].detail;
+
+   const dresc = document.createElement("p");
+   dresc.className = "dresc";
+   dresc.innerText = json[i].desc;
+
+   const watch = document.createElement("div");
+   watch.className = "watch";
+   watch.innerText = "▶ WATCH MOVIE";
+   
+   const watchlist = document.createElement("div");
+   watchlist.className = "watchlist";
+   watchlist.innerText = "+ ADD TO WATCHLIST";
+
+   tile.appendChild(srname);
+   tile.appendChild(dretail);
+   tile.appendChild(dresc);  
+   tile.appendChild(watch);
+   tile.appendChild(watchlist); 
+
+   Container.appendChild(img1);
+   Container.appendChild(tile);
+
+   maincontainer.appendChild(Container);
+   }
+   
+</script>
